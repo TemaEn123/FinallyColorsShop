@@ -1,0 +1,25 @@
+.form {
+  & legend {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  &__item {
+    margin-bottom: 20px;
+    & input {
+      display: block;
+      margin-top: 10px;
+      padding: 5px 10px;
+      border: 1px solid lightgray;
+      &.error {
+        border: 1px solid red;
+      }
+    }
+  }
+  &__btn {
+    padding: 10px 30px;
+    background: lightcyan;
+  }
+  &__success {
+    margin-top: 20px;
+  }
+}
