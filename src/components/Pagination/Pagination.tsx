@@ -1,4 +1,6 @@
+import { memo } from "react";
 import { NUMBER_OF_PAGES } from "../../constants/constants";
+import { useTheme } from "../../context/ThemeContext";
 import { changeFilters } from "../../redux/slices/filtersSlice";
 import { useAppDispatch } from "../../redux/store";
 
@@ -8,7 +10,9 @@ interface Props {
   currentPage: number;
 }
 
-const Pagination = ({ currentPage }: Props) => {
+const Pagination = memo(({ currentPage }: Props) => {
+  const { theme } = useTheme();
+
   const dispatch = useAppDispatch();
 
   const handlePageClick = (type: string, page = currentPage) => {
@@ -22,7 +26,7 @@ const Pagination = ({ currentPage }: Props) => {
   };
 
   return (
-    <div className={styles.pagination}>
+    <div className={`${styles.pagination} ${theme ? styles.dark : ""}`}>
       <button
         onClick={() => handlePageClick("prev")}
         disabled={currentPage === 1}
@@ -46,6 +50,6 @@ const Pagination = ({ currentPage }: Props) => {
       </button>
     </div>
   );
-};
+});
 
 export default Pagination;

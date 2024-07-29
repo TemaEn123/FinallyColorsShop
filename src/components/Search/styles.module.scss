@@ -1,5 +1,10 @@
 .search {
   margin-bottom: 20px;
+  &.dark {
+    & input {
+      background: #000040;
+    }
+  }
   & input {
     width: 100%;
     border: 1px solid lightgray;
