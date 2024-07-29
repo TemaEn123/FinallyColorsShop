@@ -1,0 +1,28 @@
+.skeleton {
+  flex: 0 1 25%;
+  padding: 0 7.5px;
+  margin-bottom: 20px;
+  &__content {
+    & > div {
+      background-color: lightgray;
+    }
+  }
+  &__img {
+    padding-bottom: 100%;
+    margin-bottom: 10px;
+  }
+  &__title {
+    height: 18px;
+    width: 80%;
+    margin-bottom: 10px;
+  }
+  &__price {
+    height: 16px;
+    width: 30%;
+    margin-bottom: 20px;
+  }
+  &__btn {
+    height: 40px;
+    width: 40%;
+  }
+}
