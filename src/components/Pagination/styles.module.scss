@@ -1,0 +1,21 @@
+.pagination {
+  margin-top: 40px;
+  text-align: center;
+  & button {
+    font-size: 20px;
+    background: none;
+    padding: 2px 5px;
+    margin: 0 5px;
+    transition: opacity 0.3s ease 0s;
+
+    &:hover {
+      opacity: 0.6;
+    }
+    &:disabled {
+      cursor: default;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
