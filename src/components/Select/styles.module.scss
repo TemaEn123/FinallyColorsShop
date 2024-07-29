@@ -1,5 +1,10 @@
 .select {
   margin-bottom: 30px;
+  &.dark {
+    & select {
+      background: #000040;
+    }
+  }
   & select {
     padding: 5px;
     border: 1px solid lightgray;

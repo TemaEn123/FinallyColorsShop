@@ -33,3 +33,7 @@ export interface IChangeColor {
 export interface IColorId {
   id: string;
 }
+
+export interface IColorWithCount extends IColor {
+  count: number;
+}

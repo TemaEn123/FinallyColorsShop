@@ -2,8 +2,11 @@ import { useAppDispatch } from "../../redux/store";
 import { changeFilters } from "../../redux/slices/filtersSlice";
 
 import styles from "./styles.module.scss";
+import { useTheme } from "../../context/ThemeContext";
 
 const Select = () => {
+  const { theme } = useTheme();
+
   const dispatch = useAppDispatch();
 
   const handleSelectChange = (value: string) => {
@@ -17,7 +20,7 @@ const Select = () => {
   };
 
   return (
-    <div className={styles.select}>
+    <div className={`${styles.select} ${theme ? styles.dark : ""}`}>
       <select onChange={(e) => handleSelectChange(e.target.value)}>
         <option value="id">Default</option>
         <option value="title">Title</option>

@@ -3,10 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { colorsApi } from "./services/colors";
 import filtersSlice from "./slices/filtersSlice";
+import cartSlice from "./slices/cartSlice";
 
 export const store = configureStore({
   reducer: {
     filters: filtersSlice,
+    cart: cartSlice,
     [colorsApi.reducerPath]: colorsApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>

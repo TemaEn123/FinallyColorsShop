@@ -95,4 +95,17 @@ h6 {
   width: 100%;
   padding-top: 30px;
   padding-bottom: 30px;
+  &.dark {
+    background: #000040;
+    & * {
+      color: #fff;
+    }
+    & button {
+      background: #000040;
+      border: 1px solid #fff;
+    }
+    & input {
+      background: #000040;
+    }
+  }
 }

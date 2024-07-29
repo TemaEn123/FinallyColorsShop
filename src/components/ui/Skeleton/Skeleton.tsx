@@ -1,10 +1,11 @@
+import { memo } from "react";
 import styles from "./styles.module.scss";
 
 interface Props {
   count: number;
 }
 
-const Skeleton = ({ count }: Props) => {
+const Skeleton = memo(({ count }: Props) => {
   return (
     <>
       {[...Array(count)].map((_, i) => {
@@ -21,6 +22,6 @@ const Skeleton = ({ count }: Props) => {
       })}
     </>
   );
-};
+});
 
 export default Skeleton;
