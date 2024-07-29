@@ -1,0 +1,21 @@
+.menu {
+  &__list {
+    display: flex;
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+    & a {
+      text-transform: uppercase;
+      color: #000;
+      transition: opacity 0.3s ease 0s;
+      &.active {
+        color: red;
+      }
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
