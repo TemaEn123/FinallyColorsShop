@@ -2,9 +2,11 @@ import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux";
 
 import { colorsApi } from "./services/colors";
+import filtersSlice from "./slices/filtersSlice";
 
 export const store = configureStore({
   reducer: {
+    filters: filtersSlice,
     [colorsApi.reducerPath]: colorsApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
