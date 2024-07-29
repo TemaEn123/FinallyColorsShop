@@ -8,8 +8,12 @@ import { AppRouter } from "./routes/AppRouter.tsx";
 
 import "./index.scss";
 
+import { ThemeProvider } from "./context/ThemeContext.tsx";
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <Provider store={store}>
-    <RouterProvider router={AppRouter} />
+    <ThemeProvider>
+      <RouterProvider router={AppRouter} />
+    </ThemeProvider>
   </Provider>
 );

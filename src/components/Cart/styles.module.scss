@@ -1,0 +1,29 @@
+.cart {
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  background: #fff;
+  padding: 15px;
+  position: absolute;
+  right: 0;
+  top: 120%;
+  min-width: 300px;
+  z-index: 1;
+  display: none;
+  &.show {
+    display: block;
+  }
+  &.dark {
+    border: 1px solid #fff;
+    background: #000040;
+  }
+  &__empty {
+    text-align: center;
+  }
+  &__total {
+    text-align: center;
+    & span {
+      font-weight: bold;
+    }
+  }
+}

@@ -2,13 +2,22 @@ import { Link } from "react-router-dom";
 import { IColor } from "../../../interfaces/interfaces";
 
 import styles from "./styles.module.scss";
+import { useAppDispatch } from "../../../redux/store";
+import { addColor } from "../../../redux/slices/cartSlice";
+import { memo } from "react";
 
 interface Props {
   color: IColor;
   link: boolean;
 }
 
-const ColorItem = ({ color, link }: Props) => {
+const ColorItem = memo(({ color, link }: Props) => {
+  const dispatch = useAppDispatch();
+
+  const handleBuyClick = (color: IColor) => {
+    dispatch(addColor(color));
+  };
+
   return (
     <div className={styles.color}>
       <div className={styles.color__content}>
@@ -32,11 +41,11 @@ const ColorItem = ({ color, link }: Props) => {
           <p>
             Price: <span>{color.price}</span>
           </p>
-          <button>Buy</button>
+          <button onClick={() => handleBuyClick(color)}>Buy</button>
         </div>
       </div>
     </div>
   );
-};
+});
 
 export default ColorItem;
