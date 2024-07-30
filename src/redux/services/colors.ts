@@ -19,7 +19,7 @@ export const colorsApi = createApi({
         url: "colors",
         params: filters,
       }),
-      providesTags: (result) => ["colors"],
+      providesTags: () => ["colors"],
     }),
     getColorsById: builder.query<IColor, string>({
       query: (id) => ({
