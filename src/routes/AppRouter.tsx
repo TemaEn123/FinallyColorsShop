@@ -7,6 +7,8 @@ import About from "../pages/About/About";
 import New from "../pages/New/New";
 import Colors from "../pages/Colors/Colors";
 import SingleColor from "../pages/SingleColor/SingleColor";
+import LoginPage from "../pages/LoginPage/LoginPage";
+import RegisterPage from "../pages/RegisterPage/RegisterPage";
 
 export const AppRouter = createBrowserRouter([
   {
@@ -32,6 +34,14 @@ export const AppRouter = createBrowserRouter([
       {
         path: "colors/:id",
         element: <SingleColor />,
+      },
+      {
+        path: "login",
+        element: <LoginPage />,
+      },
+      {
+        path: "register",
+        element: <RegisterPage />,
       },
     ],
   },
