@@ -8,17 +8,7 @@ import userSlice from "./slices/userSlice";
 
 import storage from "redux-persist/lib/storage";
 
-import {
-  persistStore,
-  persistReducer,
-  WebStorage,
-  FLUSH,
-  REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-} from "redux-persist";
+import { persistStore, persistReducer, WebStorage } from "redux-persist";
 
 interface IPersistConfig {
   key: string;
@@ -52,7 +42,7 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoreActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+        ignoreActions: true,
       },
     }).concat(colorsApi.middleware),
 });
